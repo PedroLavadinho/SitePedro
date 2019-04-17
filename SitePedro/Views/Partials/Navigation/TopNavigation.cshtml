@@ -4,7 +4,7 @@
     var site = Model.Root();
     var selection = site.Children.Where(x => x.IsVisible());
 }
-@Html.Partial("~/Views/Partials/ModalSignInUp.cshtml")
+@Html.Partial("~/Views/Partials/Navigation/ModalSignInUp.cshtml")
 
 <!-- MENU -->
 <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
@@ -27,16 +27,16 @@
                 <li><a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url"><font color="000000">@site.Name</font></a></li>
                 @foreach (var item in selection)
                 {
-                <li><a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url"><font color="000000">@item.Name</font></a></li>
+                    <li><a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url"><font color="000000">@item.Name</font></a></li>
                 }
-                </ul>
+            </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><font color="000000"><i class="fa fa-facebook-square"></font></i></a></li>
-                    <li><a href="#"><font color="000000"><i class="fa fa-twitter"></font></i></a></li>
-                    <li><a href="#"><font color="000000"><i class="fa fa-instagram"></font></i></a></li>
-                    <li class="section-btn"><a href="#" data-toggle="modal" data-target="#modal-form">Sign in / Join</a></li>
-                </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><font color="000000"><i class="fa fa-facebook-square"></font></i></a></li>
+                <li><a href="#"><font color="000000"><i class="fa fa-twitter"></font></i></a></li>
+                <li><a href="#"><font color="000000"><i class="fa fa-instagram"></font></i></a></li>
+                <li class="section-btn"><a href="#" data-toggle="modal" data-target="#modal-form">Sign in / Join</a></li>
+            </ul>
         </div>
 
     </div>
