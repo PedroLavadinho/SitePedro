@@ -1,0 +1,8 @@
+SitePedro/App_Data/
+SitePedro/Bin/
+SitePedro/App_Plugins/
+SitePedro/bin/
+SitePedro/Umbraco/
+SitePedro/config/
+packages/
+.vs/

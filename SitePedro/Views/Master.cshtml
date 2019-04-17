@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Master";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Hydro - Landing Page Template</title>
+    <!--
+    Hydro Template
+    http://www.templatemo.com/tm-509-hydro
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/templatemo-style.css">
+</head>
+<body>
+    @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery.stellar.min.js"></script>
+    <script src="scripts/jquery.magnific-popup.min.js"></script>
+    <script src="scripts/smoothscroll.js"></script>
+    <script src="scripts/custom.js"></script>
+
+</body>
+</html>
