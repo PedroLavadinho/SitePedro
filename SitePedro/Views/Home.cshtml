@@ -1,36 +1,38 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "Master.cshtml";
+    var slogan = Model.Value<string>("slogan");
+    var buttontext = Model.Value<string>("buttonText");
+    var contacttext = Model.Value<string>("contactText");
+    var video = Model.Value("video");
+    var background = Model.Value<IPublishedContent>("background").Url;
 }
 
+<title>GALINA - HOME</title>
 
+<!-- HOME -->
+<section id="home" data-stellar-background-ratio="0.5" style="background-image: url('@background');background-size:cover;background-repeat:no-repeat;">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
 
-    <!-- HOME -->
-    <section id="home" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="home-info">
+                    <h1>@slogan</h1>
+                    <a href="#about" class="btn section-btn smoothScroll">@buttontext</a>
+                    <span>
+                        @contacttext
+                    </span>
+                </div>
+            </div>
 
-                <div class="col-md-6 col-sm-12">
-                    <div class="home-info">
-                        <h1>We make beautiful websites for all people.</h1>
-                        <a href="#about" class="btn section-btn smoothScroll">Start a project</a>
-                        <span>
-                            CALL US (+66) 010-020-0340
-                            <small>For any inquiry</small>
-                        </span>
+            <div class="col-md-6 col-sm-12">
+                <div class="home-video">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        @video
                     </div>
                 </div>
-
-                <div class="col-md-6 col-sm-12">
-                    <div class="home-video">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe src="https://www.youtube.com/embed/AqcjdkPMPJA" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+    </div>
+</section>

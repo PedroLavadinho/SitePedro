@@ -1,6 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Conteudo>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@model Umbraco.Web.Models.ContentModel
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
-@Html.GetGridHtml(Model, "conteudoTeste")
+<html>
+<body>
+    <section>
+        @Html.GetGridHtml(Model.Content, "conteudoTeste")
+    </section>
+</body>
+</html>

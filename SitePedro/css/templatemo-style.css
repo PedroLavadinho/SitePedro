@@ -90,7 +90,7 @@ http://www.templatemo.com/tm-509-hydro
     outline: none;
   }
 
-  .section-title {
+   .section-title {
     margin-bottom: 60px;
   }
 
@@ -146,6 +146,21 @@ http://www.templatemo.com/tm-509-hydro
     padding-top: 80px;
     padding-bottom: 80px;
     text-align: center;
+  }
+
+  #note {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 1.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
   }
 
 
@@ -319,8 +334,6 @@ http://www.templatemo.com/tm-509-hydro
   -----------------------------------------*/
 
   #home {
-    background: url('/images/home-bg.jpg') no-repeat center center;
-    background-size: cover;
     vertical-align: middle;
     display: -webkit-box;
     display: -webkit-flex;
@@ -806,7 +819,7 @@ http://www.templatemo.com/tm-509-hydro
 
   @media (min-width: 992px) {
     .modal-dialog {
-      width: 420px;
+      width: 471px;
     }
   }
 
@@ -896,6 +909,10 @@ http://www.templatemo.com/tm-509-hydro
   .modal-dialog form .form-control:hover,
   .modal-dialog form .form-control:focus {
     border-color: #ffffff;
+  }
+
+  .modal-dialog form input, select, textarea {
+    color: #ffffff;
   }
 
   .modal-dialog form input[type="submit"] {

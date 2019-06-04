@@ -1,8 +1,17 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Galeria>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "Master.cshtml";
+    var imageone = Model.Value<IPublishedContent>("imageOne").Url;
+    var imagetwo = Model.Value<IPublishedContent>("imageTwo").Url;
+    var imagethree = Model.Value<IPublishedContent>("imageThree").Url;
+    var imagefour = Model.Value<IPublishedContent>("imageFour").Url;
+    var imageonetext = Model.Value<string>("imageOneText");
+    var imagetwotext = Model.Value<string>("imageTwoText");
+    var imagethreetext = Model.Value<string>("imageThreeText");
+    var imagefourtext = Model.Value<string>("imageFourText");
 }
+
+<title>GALINA - GALLERY</title>
 
 <!-- WORK -->
 <section id="work" data-stellar-background-ratio="0.5">
@@ -12,7 +21,8 @@
             <div class="col-md-12 col-sm-12">
                 <div class="section-title">
                     <br />
-                    <h2>Our gallery</h2>
+                    <br />
+                    <h2><font color="#000000">Our gallery</font></h2>
                     <span class="line-bar">...</span>
                 </div>
             </div>
@@ -20,59 +30,48 @@
             <div class="col-md-3 col-sm-6">
                 <!-- WORK THUMB -->
                 <div class="work-thumb">
-                    <a href="images/work-image1.jpg" class="image-popup">
-                        <img src="~/images/work-image1.jpg" class="img-responsive" alt="Work">
+                    <img src="@imageone" class="img-responsive" alt="Work">
 
-                        <div class="work-info">
-                            <h3>Clean &amp; Minimal</h3>
-                            <small>Product Design</small>
-                        </div>
-                    </a>
+                    <div class="work-info">
+                        <h3>@imageonetext</h3>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <!-- WORK THUMB -->
                 <div class="work-thumb">
-                    <a href="images/work-image2.jpg" class="image-popup">
-                        <img src="~/images/work-image2.jpg" class="img-responsive" alt="Work">
+                    <img src="@imagetwo" class="img-responsive" alt="Work">
 
-                        <div class="work-info">
-                            <h3>Studio Bag</h3>
-                            <small>Branding</small>
-                        </div>
-                    </a>
+                    <div class="work-info">
+                        <h3>@imagetwotext</h3>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <!-- WORK THUMB -->
                 <div class="work-thumb">
-                    <a href="images/work-image3.jpg" class="image-popup">
-                        <img src="~/images/work-image3.jpg" class="img-responsive" alt="Work">
+                    <img src="@imagethree" class="img-responsive" alt="Work">
 
-                        <div class="work-info">
-                            <h3>Frame Design</h3>
-                            <small>Photography</small>
-                        </div>
-                    </a>
+                    <div class="work-info">
+                        <h3>@imagethreetext</h3>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <!-- WORK THUMB -->
                 <div class="work-thumb">
-                    <a href="images/work-image4.jpg" class="image-popup">
-                        <img src="~/images/work-image4.jpg" class="img-responsive" alt="Work">
+                    <img src="@imagefour" class="img-responsive" alt="Work">
 
-                        <div class="work-info">
-                            <h3>Paint Work</h3>
-                            <small>Art, Design</small>
-                        </div>
-                    </a>
+                    <div class="work-info">
+                        <h3>@imagefourtext</h3>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+@Html.Partial("~/Views/Partials/Navigation/BottomNavigation.cshtml")

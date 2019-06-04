@@ -417,9 +417,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ForgotPasswordController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MembersPageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ProfileSurfaceController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\ChangeUsernameModel.cs" />
+    <Compile Include="Models\ForgotPasswordModel.cs" />
+    <Compile Include="Models\MembersPageModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MembersModel.cs" />
+    <Compile Include="Models\ProfileModel.cs" />
+    <Compile Include="Models\ProfilePageModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +489,7 @@
     <Content Include="images\work-image2.jpg" />
     <Content Include="images\work-image3.jpg" />
     <Content Include="images\work-image4.jpg" />
+    <Content Include="Media\jhbpieoe\home-bg.jpg" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\tinyMceConfig.config" />
@@ -484,6 +501,7 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\custom.js" />
     <Content Include="scripts\Hello World.js" />
+    <Content Include="scripts\jquery.ajax.form.js" />
     <Content Include="scripts\jquery.js" />
     <Content Include="scripts\jquery.magnific-popup.min.js" />
     <Content Include="scripts\jquery.stellar.min.js" />
@@ -507,11 +525,11 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Template.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Members\" />
+    <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\fontawesome-webfont.eot" />
@@ -529,6 +547,14 @@
     <Content Include="Views\Galeria.cshtml" />
     <Content Include="Views\Conteudo.cshtml" />
     <Content Include="Views\lingua.cshtml" />
+    <Content Include="Views\Partials\Navigation\BottomNavigation.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Logout.cshtml" />
+    <Content Include="Views\profilePage.cshtml" />
+    <Content Include="Views\Avatar.cshtml" />
+    <Content Include="Views\membersPage.cshtml" />
+    <Content Include="Views\ForgotPassword\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

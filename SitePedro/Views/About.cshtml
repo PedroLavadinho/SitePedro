@@ -1,61 +1,69 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.About>
-@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "Master.cshtml";
+    var title = Model.Value<string>("title");
+    var description = Model.Value<string>("description");
+    var progressbarfirst = Model.Value<string>("progressBarFirst");
+    var progressbarsecond = Model.Value<string>("progressBarSecond");
+    var progressbarthird = Model.Value<string>("progressBarThird");
+    var progressbarfourth = Model.Value<string>("progressBarFourth");
+    var percentagefirst = Model.Value<string>("percentageFirst");
+    var percentagesecond = Model.Value<string>("percentageSecond");
+    var percentagethird = Model.Value<string>("percentageThird");
+    var percentagefourth = Model.Value<string>("percentageFourth");
+    var imageright = Model.Value<IPublishedContent>("imageRight").Url;
 }
 
-    <!-- ABOUT -->
-    <section id="about" data-stellar-background-ratio="0.5">
-        <div class="container">
-            <div class="row">
+<title>GALINA - ABOUT</title>
 
-                <div class="col-md-5 col-sm-6">
-                    <div class="about-info">
-                        <div class="section-title">
-                            <h2><font color="#000000">Let us introduce</font></h2>
-                            <span class="line-bar">...</span>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+<!-- ABOUT -->
+<section id="about" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5 col-sm-6">
+                <div class="about-info">
+                    <div class="section-title">
+                        <h2><font color="#000000">@title</font></h2>
+                        <span class="line-bar">...</span>
                     </div>
+                    @description
                 </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="about-info skill-thumb">
-
-                        <strong>Web Design</strong>
-                        <span class="pull-right">85%</span>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
-                        </div>
-
-                        <strong>Photography</strong>
-                        <span class="pull-right">90%</span>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                        </div>
-
-                        <strong>Content Marketing</strong>
-                        <span class="pull-right">75%</span>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                        </div>
-
-                        <strong>CMS Admin</strong>
-                        <span class="pull-right">70%</span>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-12">
-                    <div class="about-image">
-                        <img src="~/images/about-image.jpg" class="img-responsive" alt="">
-                    </div>
-                </div>
-
             </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="about-info skill-thumb">
+
+                    <strong>@progressbarfirst</strong>
+                    <span class="pull-right">@percentagefirst</span>
+                    <br />
+                    <br />
+
+                    <strong>@progressbarsecond</strong>
+                    <span class="pull-right">@percentagesecond</span>
+                    <br />
+                    <br />
+
+                    <strong>@progressbarthird</strong>
+                    <span class="pull-right">@percentagethird</span>
+                    <br />
+                    <br />
+
+                    <strong>@progressbarfourth</strong>
+                    <span class="pull-right">@percentagefourth</span>
+                    <br />
+                    <br />
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12">
+                <div class="about-image">
+                    <img src="@imageright" class="img-responsive" alt="">
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+@Html.Partial("~/Views/Partials/Navigation/BottomNavigation.cshtml")
