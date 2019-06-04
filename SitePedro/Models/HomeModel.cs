@@ -21,6 +21,25 @@ namespace SitePedro.Models
             get { return Content.Value<string>("slogan"); }
         }
 
+        public string ButtonText
+        {
+            get { return Content.Value<string>("buttonText"); }
+        }
+
+        public string ContactText
+        {
+            get { return Content.Value<string>("contactText"); }
+        }
+
+        public MvcHtmlString Video
+        {
+            get { return Content.Value<MvcHtmlString>("video"); }
+        }
+
+        public MvcHtmlString Background
+        {
+            get { return Content.Value<MvcHtmlString>("background"); }
+        }
 
         public Home(IPublishedContent content) : base(content)
         {

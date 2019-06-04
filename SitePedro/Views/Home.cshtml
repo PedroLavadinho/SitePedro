@@ -1,14 +1,17 @@
-﻿@using ContentModels = Umbraco.Web.PublishedModels;
-@model Umbraco.Web.Models.ContentModel
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
     Layout = "Master.cshtml";
-    var slogan = Model.Content.Value<string>("slogan");
+    var slogan = Model.Value<string>("slogan");
+    var buttontext = Model.Value<string>("buttonText");
+    var contacttext = Model.Value<string>("contactText");
+    var video = Model.Value("video");
+    var background = Model.Value<IPublishedContent>("background").Url;
 }
 
-
+<title>GALINA - HOME</title>
 
 <!-- HOME -->
-<section id="home" data-stellar-background-ratio="0.5">
+<section id="home" data-stellar-background-ratio="0.5" style="background-image: url('@background');background-size:cover;background-repeat:no-repeat;">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -16,10 +19,9 @@
             <div class="col-md-6 col-sm-12">
                 <div class="home-info">
                     <h1>@slogan</h1>
-                    <a href="#about" class="btn section-btn smoothScroll">Start a project</a>
+                    <a href="#about" class="btn section-btn smoothScroll">@buttontext</a>
                     <span>
-                        CALL US (+66) 010-020-0340
-                        <small>For any inquiry</small>
+                        @contacttext
                     </span>
                 </div>
             </div>
@@ -27,11 +29,10 @@
             <div class="col-md-6 col-sm-12">
                 <div class="home-video">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe src="https://www.youtube.com/embed/AqcjdkPMPJA" frameborder="0" allowfullscreen></iframe>
+                        @video
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

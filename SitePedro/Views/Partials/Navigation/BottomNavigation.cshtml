@@ -1,0 +1,83 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    var firsttitle = Model.Value<string>("firstTitle");
+    var secondtitle = Model.Value<string>("secondTitle");
+    var thirdtitle = Model.Value<string>("thirdTitle");
+    var fourthtitle = Model.Value<string>("fourthTitle");
+    var firsttitledesc = Model.Value<string>("firstTitleDesc");
+    var contacttext = Model.Value<string>("contactText");
+    var secondtitletextone = Model.Value<string>("secondTitleTextOne");
+    var secondtitletexttwo = Model.Value<string>("secondTitleTextTwo");
+    var secondtitletextthree = Model.Value<string>("secondTitleTextThree");
+    var secondtitletextfour = Model.Value<string>("secondTitleTextFour");
+    var thirdtitletextone = Model.Value<string>("thirdTitleTextOne");
+    var thirdtitletexttwo = Model.Value<string>("thirdTitleTextTwo");
+    var thirdtitletextthree = Model.Value<string>("thirdTitleTextThree");
+    var phonecontact = Model.Value<string>("phoneContact");
+}
+
+<!-- FOOTER -->
+<footer data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5 col-sm-12">
+                <div class="footer-thumb footer-info">
+                    <h2>@firsttitle</h2>
+                    <p>@firsttitledesc</p>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>@secondtitle</h2>
+                    <ul class="footer-link">
+                        <li><a href="#">@secondtitletextone</a></li>
+                        <li><a href="#">@secondtitletexttwo</a></li>
+                        <li><a href="#">@secondtitletextthree</a></li>
+                        <li><a href="#">@secondtitletextfour</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>@thirdtitle</h2>
+                    <ul class="footer-link">
+                        <li><a href="#">@thirdtitletextone</a></li>
+                        <li><a href="#">@thirdtitletexttwo</a></li>
+                        <li><a href="#">@thirdtitletextthree</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4">
+                <div class="footer-thumb">
+                    <h2>@fourthtitle</h2>
+                    <p>@contacttext</p>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+                <div class="footer-bottom">
+                    <div class="col-md-6 col-sm-5">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2017 Your Company</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-7">
+                        <div class="phone-contact">
+                            <p>Call us <span>@phonecontact</span></p>
+                        </div>
+                        <ul class="social-icon">
+                            <li><a href="https://www.facebook.com/templatemo" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>

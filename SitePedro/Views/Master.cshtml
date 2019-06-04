@@ -6,7 +6,6 @@
 <html lang="en">
 <head>
 
-    <title>Hydro - Landing Page Template</title>
     <!--
     Hydro Template
     http://www.templatemo.com/tm-509-hydro
@@ -26,18 +25,36 @@
     <link rel="stylesheet" href="~/css/templatemo-style.css">
 </head>
 <body>
+    @if (TempData["Error"] != null)
+    {
+        <div id="note">
+            @TempData["Error"]
+        </div>
+    }
+
+    @if (TempData["Success"] != null)
+    {
+        <div id="note">
+            @TempData["Success"]
+        </div>
+    }
+
     @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
     <main>
         @RenderBody()
     </main>
 
     <!-- SCRIPTS -->
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/jquery.stellar.min.js"></script>
-    <script src="scripts/jquery.magnific-popup.min.js"></script>
-    <script src="scripts/smoothscroll.js"></script>
-    <script src="scripts/custom.js"></script>
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/jquery.stellar.min.js"></script>
+    <script src="~/scripts/jquery.ajax.form.js"></script>
+    <script src="~/scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/scripts/smoothscroll.js"></script>
+    <script src="~/scripts/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 
 </body>
 </html>

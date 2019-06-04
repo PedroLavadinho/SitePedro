@@ -1,0 +1,26 @@
+﻿@using System.Web.Mvc.Html
+@using Umbraco.Web
+@using SitePedro.Controllers
+@model SitePedro.Models.RegisterModel
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@using (Html.BeginUmbracoForm<RegisterController>("Register"))
+{
+
+    @Html.ValidationSummary("Model", true)
+
+    @Html.AntiForgeryToken()
+    @Html.TextBoxFor(m => Model.Username, htmlAttributes : new { @class = "form-control", @placeholder = "Username" })
+    @Html.ValidationMessageFor(m => Model.Username, "", new { @style = "color: #FF3535; text-shadow: 1px 1px #000000" })
+
+    @Html.TextBoxFor(m => Model.Email, htmlAttributes: new { @class = "form-control", @placeholder = "Email" })
+    @Html.ValidationMessageFor(m => Model.Email, "", new { @style = "color: #FF3535; text-shadow: 1px 1px #000000" })
+
+    @Html.PasswordFor(m => Model.Password, htmlAttributes: new { @class = "form-control", @placeholder = "Password" })
+    @Html.ValidationMessageFor(m => Model.Password, "", new { @style = "color: #FF3535; text-shadow: 1px 1px #000000" })
+
+    <input type="submit" class="form-control" name="submit" value="Sign Up">
+}

@@ -1,0 +1,16 @@
+﻿@using Umbraco.Web
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginUmbracoForm("SubmitLogout", "Login", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+    {
+        @Html.AntiForgeryToken()
+        var myUser = System.Web.Security.Membership.GetUser();
+        if (myUser != null)
+        {
+            <p style="color:#FF3535;text-shadow: 1px 1px #000000;"><strong>Logged in as</strong> <span><b>@myUser.UserName</b></span>.</p>
+            <button name="login" type="submit"><span>Logout</span></button>
+
+        }
+    }
+}

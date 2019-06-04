@@ -1,0 +1,33 @@
+﻿@using System.Web.Mvc.Html
+@using Umbraco.Web
+@using SitePedro.Models
+@using SitePedro.Controllers
+
+@{
+    var loginModel = new LoginModel();
+
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+
+    using (Html.BeginUmbracoForm<LoginController>("SubmitLogin"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("loginModel", true)
+
+        @Html.TextBoxFor(m => loginModel.Username, htmlAttributes: new { @class = "form-control", @placeholder = "Username" })
+        @Html.ValidationMessageFor(m => loginModel.Username, "", new { @style = "color: #FF3535; text-shadow: 1px 1px #000000" })
+
+        @Html.PasswordFor(m => loginModel.Password, htmlAttributes: new { @class = "form-control", @placeholder = "Password" })
+        @Html.ValidationMessageFor(m => loginModel.Password, "", new { @style = "color: #FF3535; text-shadow: 1px 1px #000000" })
+
+        <input type="submit" class="form-control" name="submit" value="Sign In">
+    }
+}
+else
+{
+    Html.RenderAction("Logout", "Login");
+}
