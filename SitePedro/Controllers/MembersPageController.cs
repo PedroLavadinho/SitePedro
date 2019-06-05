@@ -18,7 +18,6 @@ namespace SitePedro.Controllers
             foreach (var item in allUsers)
             {
 
-
                 var NameandSurname = item.GetValue<string>("nameAndSurname");
 
                 var avatarId = item.GetValue<int>("avatar");
@@ -28,8 +27,12 @@ namespace SitePedro.Controllers
                 var umbUser = new MembersModel();
 
                 umbUser.NameandSurname = NameandSurname;
-                umbUser.Avatar = avatar;
-                umbUser.ImagemUrl = avatar.Url;
+
+                if (item.GetValue("avatar") != null)
+                {
+                    umbUser.Avatar = avatar;
+                    umbUser.ImagemUrl = avatar.Url;
+                }
 
 
 

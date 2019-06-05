@@ -4,6 +4,7 @@ namespace SitePedro.Models
 {
     public class ChangeUsernameModel
     {
+
         [Display(Name = "New Username")]
         [Required]
         public string NewUsername { get; set; }
