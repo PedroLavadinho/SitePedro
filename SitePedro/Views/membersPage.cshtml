@@ -23,17 +23,34 @@
             <br />
             @foreach (var umbUser in Model.UmbUsers)
             {
-                <div class="col-md-3 col-sm-6">
-                    <!-- WORK THUMB -->
+                if (umbUser.Avatar != null)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <!-- WORK THUMB -->
 
-                    <div class="work-thumb">
-                        <img src="@(umbUser.Avatar.Url)" class="img-responsive" alt="Work">
+                        <div class="work-thumb">
+                            <img src="@(umbUser.ImagemUrl)" class="img-responsive" alt="Work">
 
-                        <div class="work-info">
-                            <h3>@umbUser.NameandSurname</h3>
+                            <div class="work-info">
+                                <h3>@umbUser.NameandSurname</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <!-- WORK THUMB -->
+
+                        <div class="work-thumb">
+                            <img src="~/images/noavatar.png" class="img-responsive" alt="Work">
+
+                            <div class="work-info">
+                                <h3>@umbUser.NameandSurname</h3>
+                            </div>
+                        </div>
+                    </div>
+                }
             }
 
 

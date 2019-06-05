@@ -47,6 +47,7 @@ namespace SitePedro.Controllers
             TempData.Clear();
             Session.Clear();
             FormsAuthentication.SignOut();
+            TempData["Success"] = "Successfully logged out!";
             return Redirect("/home/");
         }
     }

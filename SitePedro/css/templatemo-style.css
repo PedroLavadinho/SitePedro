@@ -148,9 +148,9 @@ http://www.templatemo.com/tm-509-hydro
     text-align: center;
   }
 
-  #note {
+#note {
     position: absolute;
-    z-index: 101;
+    z-index: 6001;
     top: 0;
     left: 0;
     right: 0;
@@ -161,8 +161,7 @@ http://www.templatemo.com/tm-509-hydro
     -webkit-box-shadow: 0 0 5px black;
     -moz-box-shadow: 0 0 5px black;
     box-shadow: 0 0 5px black;
-  }
-
+}
 
   /*---------------------------------------
        PRE LOADER              

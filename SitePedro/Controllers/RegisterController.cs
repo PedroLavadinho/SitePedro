@@ -19,11 +19,29 @@ namespace SitePedro.Controllers
         {
             if (ModelState.IsValid)
             {
+                if ((Services.MemberService.GetByUsername(model.Username) != null) && (Services.MemberService.GetByEmail(model.Email) != null))
+                {
+                    TempData["Error"] = "Registration failed! Username and email already exist.";
+                    return CurrentUmbracoPage();
+                }
+
+                if (Services.MemberService.GetByUsername(model.Username) != null)
+                {
+                    TempData["Error"] = "Registration failed! Username already exists.";
+                    return CurrentUmbracoPage();
+                }
+
+                if (Services.MemberService.GetByEmail(model.Email) != null)
+                {
+                    TempData["Error"] = "Registration failed! Email already exists.";
+                    return CurrentUmbracoPage();
+                }
+
                 Membership.CreateUser(model.Username, model.Password, model.Email);
                 FormsAuthentication.SetAuthCookie(model.Username, false);
                 UrlHelper myHelper = new UrlHelper(HttpContext.Request.RequestContext);
                 TempData["Success"] = "Successfully registered!";
-                return RedirectToCurrentUmbracoPage();
+                return CurrentUmbracoPage();
             }
             return PartialView(model);
         }
