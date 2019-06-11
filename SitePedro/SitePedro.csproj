@@ -417,7 +417,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ContactEntriesSurfaceController.cs" />
     <Compile Include="Controllers\ForgotPasswordController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MembersPageController.cs" />
@@ -427,9 +427,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BudgetLevel.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\ChangeUsernameModel.cs" />
-    <Compile Include="Models\ContactInfoModel.cs" />
+    <Compile Include="Models\ContactEntriesModel.cs" />
     <Compile Include="Models\ForgotPasswordModel.cs" />
     <Compile Include="Models\MembersPageModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -531,6 +532,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ContactEntries\" />
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Members\" />
     <Folder Include="Views\Profile\" />
@@ -549,7 +551,6 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Contact.cshtml" />
     <Content Include="Views\Galeria.cshtml" />
-    <Content Include="Views\Conteudo.cshtml" />
     <Content Include="Views\lingua.cshtml" />
     <Content Include="Views\Partials\Navigation\BottomNavigation.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />

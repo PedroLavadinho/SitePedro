@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SitePedro.Models
 {
-    public class ContactInfoModel
+    public class ContactEntriesModel
     {
         [Display(Name = "Full Name")]
         public string FullName { get; set; }
@@ -20,8 +20,7 @@ namespace SitePedro.Models
         public int PhoneNumber { get; set; }
 
         [Display(Name = "Budget Level")]
-        [DataType(DataType.Currency)]
-        public int BudgetLevel { get; set; }
+        public BudgetLevel Budget { get; set; }
 
         [Display(Name = "Requirements")]
         public string Requirements { get; set; }
